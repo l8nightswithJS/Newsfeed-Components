@@ -114,6 +114,8 @@ function createArticle(articleInfo) {
    button.classList.add('expandButton');
 
   //append children for hierarchy 
+
+  
   article.appendChild(title);
   article.appendChild(pDate);
   article.appendChild(pOne);
