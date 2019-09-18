@@ -88,6 +88,62 @@ const data = [
   }
 ];
 
+function createArticle(articleInfo) {
+
+  //create elements.
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const pDate = document.createElement('p');
+  const pOne = document.createElement('p');
+  const pTwo = document.createElement('p');
+  const pThree = document.createElement('p');
+  const button = document.createElement('span');
+
+  // map data through 5 arguments
+  title.textContent = articleInfo.title;
+  pDate.textContent = articleInfo.date;
+  pOne.textContent = articleInfo.firstParagraph;
+  pTwo.textContent = articleInfo.secondParagraph;
+  pThree.textContent = articleInfo.thirdParagraph;
+  button.textContent = 'v v v';
+
+   // create classes 
+
+   article.classList.add('article');
+   pDate.classList.add('date');
+   button.classList.add('expandButton');
+
+  //append children for hierarchy 
+
+  
+  article.appendChild(title);
+  article.appendChild(pDate);
+  article.appendChild(pOne);
+  article.appendChild(pTwo);
+  article.appendChild(pThree);
+  article.appendChild(button);
+
+  //event listener
+  button.addEventListener('click', (e) => {
+    article.classList.toggle('article-open')
+
+  }) 
+  button.ta
+ 
+
+  return article;
+
+
+
+  
+}
+
+const articles = document.querySelector('.articles')
+
+data.forEach(data => {
+  articles.appendChild(createArticle(data));
+})
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">

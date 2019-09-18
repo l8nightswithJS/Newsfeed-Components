@@ -33,3 +33,15 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function createMenu(menuData) {
+  const main = document.createElement('div');
+  const menuMain = document.createElement('ul');
+  menuItems.forEach(data => {
+    const menuTags = document.createElement('li');
+    menuMain.appendChild(menuTags);
+    menuTags.textContent = data;
+  })
+  main.appendChild(menuMain);
+  return main;
+}
